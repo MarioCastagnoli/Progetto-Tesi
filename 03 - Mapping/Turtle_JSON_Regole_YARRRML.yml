@@ -1,0 +1,103 @@
+prefixes:
+  # Ontologia del progetto
+  cult: "https://example.ontology.it/onto/cultural/"
+
+  # Ontologie esterne
+  cis: "http://dati.beniculturali.it/cis/"
+  tiapit: "https://w3id.org/italia/onto/TI/"
+  l0: "https://w3id.org/italia/onto/l0/"
+  clv: "https://w3id.org/italia/onto/CLV/"
+
+  # Standard
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+
+  # Istanze
+  data: "https://example.lod.it/data/"
+
+
+mappings:
+
+  # ============================================================
+  # PAINTING
+  # ============================================================
+
+  painting:
+    sources:
+      - [opere_dipinti.json~jsonpath, "$[*]"]
+
+    s: data:Painting/$(artwork_id)
+
+    po:
+      - [a, cult:Painting]
+
+      - [cult:artworkId, $(artwork_id)]
+
+      - [cult:title, $(artwork_title)]
+
+      - [cult:description, $(artwork_description)]
+
+      - [cult:hasTimeReference,
+         data:TimeReference/$(time_reference)~iri]
+
+      - [cult:hasArtworkLocation,
+         data:ArtworkLocation/$(cultural_site_id)~iri]
+
+
+  # ============================================================
+  # ARTWORK LOCATION
+  # ============================================================
+
+  artworkLocation:
+    sources:
+      - [opere_dipinti.json~jsonpath, "$[*]"]
+
+    s: data:ArtworkLocation/$(cultural_site_id)
+
+    po:
+      - [a, cult:ArtworkLocation]
+
+      - [cult:artworkLocationId,
+         $(cultural_site_id)]
+
+      - [cult:artworkLocationName,
+         $(cultural_site_name)]
+
+      - [cult:isLocatedIn,
+         data:Municipality/$(istat_code)~iri]
+
+
+  # ============================================================
+  # MUNICIPALITY
+  # ============================================================
+
+  municipality:
+    sources:
+      - [opere_dipinti.json~jsonpath, "$[*]"]
+
+    s: data:Municipality/$(istat_code)
+
+    po:
+      - [a, cult:Municipality]
+
+      - [cult:istatCode,
+         $(istat_code)]
+
+      - [l0:name,
+         $(place_name)]
+
+
+  # ============================================================
+  # TIME REFERENCE
+  # ============================================================
+
+  timeReference:
+    sources:
+      - [opere_dipinti.json~jsonpath, "$[*]"]
+
+    s: data:TimeReference/$(time_reference)
+
+    po:
+      - [a, cult:TimeReference]
+
+      - [l0:name,
+         $(time_reference)]

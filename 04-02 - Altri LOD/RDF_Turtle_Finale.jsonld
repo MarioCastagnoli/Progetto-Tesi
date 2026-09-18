@@ -1,0 +1,923 @@
+[
+  {
+    "@id": "https://example.lod.it/data/Painting/0500717049",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "0500717049"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Tela di piccole dimensioni, rappresenta il ritratto di una figura maschile, a mezzo busto, posto di tre quarti"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/1469952786491"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/XVII%20secolo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "Ritratto di gentiluomo"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/1400079575",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "1400079575"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Dipinto a olio su cartoncino raffigurante una veduta della campagna romana, colta nella quiete dopo un temporale, nel cielo, infatti, si affrontano nubi maestose e squarci di sereno, sullo sfondo si riconosce la sagoma del Mausoleo di Cecilia Metella sulla via Appia"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/2c095"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/Fine%20XIX%20secolo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "All'acqua Santa, dopo il temporale"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/TimeReference/Met%C3%A0%20XVII%20secolo",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/TimeReference",
+      "https://example.ontology.it/onto/cultural/CenturyReference"
+    ],
+    "https://example.ontology.it/onto/cultural/centuryLabel": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "Metà XVII secolo"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Metà XVII secolo"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/0500729081",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "0500729081"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/26ef140d0b25c"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/XX%20secolo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "Ciociara"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Municipality/037006",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Municipality"
+    ],
+    "https://example.ontology.it/onto/cultural/istatCode": [
+      {
+        "@value": "037006"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Bologna"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Municipality/103050",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Municipality"
+    ],
+    "https://example.ontology.it/onto/cultural/istatCode": [
+      {
+        "@value": "103050"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Omegna"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/ArtworkLocation/3ef59d5",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/ArtworkLocation"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationId": [
+      {
+        "@value": "3ef59d5"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationName": [
+      {
+        "@value": "Palazzo Fulcis"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/isLocatedIn": [
+      {
+        "@id": "https://example.lod.it/data/Municipality/025006"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Municipality/070006",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Municipality"
+    ],
+    "https://example.ontology.it/onto/cultural/istatCode": [
+      {
+        "@value": "070006"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Campobasso"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/ArtworkLocation/d2122b195",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/ArtworkLocation"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationId": [
+      {
+        "@value": "d2122b195"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationName": [
+      {
+        "@value": "Museo Nazionale di Arti e Tradizioni Popolari"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/isLocatedIn": [
+      {
+        "@id": "https://example.lod.it/data/Municipality/058091"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Municipality/058091",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Municipality"
+    ],
+    "https://example.ontology.it/onto/cultural/istatCode": [
+      {
+        "@value": "058091"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Roma"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/0500717074",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "0500717074"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Tela di formato orizzontale, rappresenta una vista a volo d'uccello della città di Belluno, in alto al centro lo stemma Boldù sorretto da putti, ai lati i due basilischi dello stemma cittadino, in basso a sinistra un putto sta scolpendo un'iscrizione"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/3ef59d5"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/XVII%20secolo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "Pianta prospettica della città di Belluno"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/TimeReference/1986-12-31",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/TimeReference",
+      "https://example.ontology.it/onto/cultural/DateReference"
+    ],
+    "https://w3id.org/italia/onto/TI/date": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "1986-12-31"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "1986-12-31"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/TimeReference/Seconda%20met%C3%A0%20XIX%20secolo",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/TimeReference",
+      "https://example.ontology.it/onto/cultural/CenturyReference"
+    ],
+    "https://example.ontology.it/onto/cultural/centuryLabel": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "Seconda metà XIX secolo"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Seconda metà XIX secolo"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/ArtworkLocation/26ef140d0b25c",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/ArtworkLocation"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationId": [
+      {
+        "@value": "26ef140d0b25c"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationName": [
+      {
+        "@value": "Palazzo della Ragione"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/isLocatedIn": [
+      {
+        "@id": "https://example.lod.it/data/Municipality/023091"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/1400001122-11",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "1400001122-11"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Dipinto"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/1489147295188"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/XVII%20secolo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "Resurrezione di Cristo"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Municipality/070024",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Municipality"
+    ],
+    "https://example.ontology.it/onto/cultural/istatCode": [
+      {
+        "@value": "070024"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Fossalto"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/ArtworkLocation/1489147295188",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/ArtworkLocation"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationId": [
+      {
+        "@value": "1489147295188"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationName": [
+      {
+        "@value": "Chiesa di Santa Maria Assunta"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/isLocatedIn": [
+      {
+        "@id": "https://example.lod.it/data/Municipality/070024"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Municipality/046017",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Municipality"
+    ],
+    "https://example.ontology.it/onto/cultural/istatCode": [
+      {
+        "@value": "046017"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Lucca"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Municipality/063049",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Municipality"
+    ],
+    "https://example.ontology.it/onto/cultural/istatCode": [
+      {
+        "@value": "063049"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Napoli"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/TimeReference/Fine%20XIX%20secolo",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/TimeReference",
+      "https://example.ontology.it/onto/cultural/CenturyReference"
+    ],
+    "https://example.ontology.it/onto/cultural/centuryLabel": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "Fine XIX secolo"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Fine XIX secolo"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/ArtworkLocation/5dfd27ce08",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/ArtworkLocation"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationId": [
+      {
+        "@value": "5dfd27ce08"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationName": [
+      {
+        "@value": "Castel Capuano"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/isLocatedIn": [
+      {
+        "@id": "https://example.lod.it/data/Municipality/063049"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/TimeReference/1756-1762",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/TimeReference",
+      "https://example.ontology.it/onto/cultural/YearRange"
+    ],
+    "https://example.ontology.it/onto/cultural/endYear": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#gYear",
+        "@value": "1762"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/startYear": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#gYear",
+        "@value": "1756"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "1756-1762"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/ArtworkLocation/1234",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/ArtworkLocation"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationId": [
+      {
+        "@value": "1234"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationName": [
+      {
+        "@value": "Palazzo della Residenza della Cassa dei Risparmi di Forlì"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/isLocatedIn": [
+      {
+        "@id": "https://example.lod.it/data/Municipality/040012"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/1201388916",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "1201388916"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Nel dipinto è raffigurato l'interno di una dimora alpina, con al centro un grande camino col fuoco acceso e una pentola in rame fumante appesa. Ai due lati del camino due finestre da cui si vedono paesaggi innevati. In primo piano è un basso muro su due livelli sul quale sono appoggiati numerosi oggetti e alimenti. Al di qua del muro una sedia impagliata"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/d2122b195"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/XX%20secolo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "Inverno in Cadore"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/TimeReference/XVII%20secolo",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/TimeReference",
+      "https://example.ontology.it/onto/cultural/CenturyReference"
+    ],
+    "https://example.ontology.it/onto/cultural/centuryLabel": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "XVII secolo"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "XVII secolo"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Municipality/023091",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Municipality"
+    ],
+    "https://example.ontology.it/onto/cultural/istatCode": [
+      {
+        "@value": "023091"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Verona"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/TimeReference/XX%20secolo",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/TimeReference",
+      "https://example.ontology.it/onto/cultural/CenturyReference"
+    ],
+    "https://example.ontology.it/onto/cultural/centuryLabel": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@value": "XX secolo"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "XX secolo"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/1500190885",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "1500190885"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Dipinto"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/5dfd27ce08"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/Met%C3%A0%20XVII%20secolo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "Madonna del Carmine"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/0100454512",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "0100454512"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Tela dipinta"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/b34403d79c17"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/Met%C3%A0%20XVII%20secolo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "Adorazione dei Magi"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/ArtworkLocation/1469952786491",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/ArtworkLocation"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationId": [
+      {
+        "@value": "1469952786491"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationName": [
+      {
+        "@value": "Palazzo Pellegrini a S. Cecilia"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/isLocatedIn": [
+      {
+        "@id": "https://example.lod.it/data/Municipality/023091"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Municipality/040012",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Municipality"
+    ],
+    "https://example.ontology.it/onto/cultural/istatCode": [
+      {
+        "@value": "040012"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Forlì"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/ArtworkLocation/1477239995289",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/ArtworkLocation"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationId": [
+      {
+        "@value": "1477239995289"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationName": [
+      {
+        "@value": "Istituto d'Arte - IsArt"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/isLocatedIn": [
+      {
+        "@id": "https://example.lod.it/data/Municipality/037006"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/0500717120",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "0500717120"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Tavola di formato verticale, rappresenta il ritratto di una giovane donna"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/1469952786491"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/XX%20secolo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "Ritratto di Gianna"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/ArtworkLocation/b34403d79c17",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/ArtworkLocation"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationId": [
+      {
+        "@value": "b34403d79c17"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationName": [
+      {
+        "@value": "Casa Privata"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/isLocatedIn": [
+      {
+        "@id": "https://example.lod.it/data/Municipality/103050"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/ArtworkLocation/9ed8ea96c7e",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/ArtworkLocation"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationId": [
+      {
+        "@value": "9ed8ea96c7e"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationName": [
+      {
+        "@value": "Villa Guinigi"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/isLocatedIn": [
+      {
+        "@id": "https://example.lod.it/data/Municipality/046017"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/0500638012",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "0500638012"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Tela di formato verticale, rappresenta una fanciulla con pizzo e nastro rosso al collo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/1469952786491"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/1756-1762"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "Giovane donna in abito bruno, con collarino di pizzo bianco e nastro rosso"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/0800686820",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "0800686820"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Dipinto su tela tensionata ad un telaio con biette di espansione agli angolari, il telaio è posto all'interno di una cornice doppia con passepartout interno rivestito di tela bianca e vetro di protezione frontale ed un profilo esterno modanato e argentato. La scena mostra un consesso di persone in abiti civili che tengono dietro in corteo funebre ad un carretto trainato da una coppia di giovenche bianche nella stradina che si inerpica a raggiungere un borgo in cima ad una collina"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/1234"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/1986-12-31"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "I fer dl'amstir"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Municipality/025006",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Municipality"
+    ],
+    "https://example.ontology.it/onto/cultural/istatCode": [
+      {
+        "@value": "025006"
+      }
+    ],
+    "https://w3id.org/italia/onto/l0/name": [
+      {
+        "@value": "Belluno"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/0800070069",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "0800070069"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Dipinto raffigurante paesaggio con campi e colline. Al centro è collocato un albero, mentre alla sua destra sale una stradina. Sulla sinistra si intravede un contadino su un carro trascinato da un bue. Sempre sulla sinistra, in lontananza, è collocato un piccolo paese"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/1477239995289"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/XX%20secolo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "Paesaggio emiliano"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/Painting/0900593220",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/Painting"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkId": [
+      {
+        "@value": "0900593220"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/description": [
+      {
+        "@value": "Paesaggio fluviale con alberi e montagne sullo sfondo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasArtworkLocation": [
+      {
+        "@id": "https://example.lod.it/data/ArtworkLocation/9ed8ea96c7e"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/hasTimeReference": [
+      {
+        "@id": "https://example.lod.it/data/TimeReference/Seconda%20met%C3%A0%20XIX%20secolo"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/title": [
+      {
+        "@value": "Paesaggio scozzese"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.lod.it/data/ArtworkLocation/2c095",
+    "@type": [
+      "https://example.ontology.it/onto/cultural/ArtworkLocation"
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationId": [
+      {
+        "@value": "2c095"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/artworkLocationName": [
+      {
+        "@value": "Villa Praitano"
+      }
+    ],
+    "https://example.ontology.it/onto/cultural/isLocatedIn": [
+      {
+        "@id": "https://example.lod.it/data/Municipality/070006"
+      }
+    ]
+  }
+]

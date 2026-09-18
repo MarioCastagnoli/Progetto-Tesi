@@ -1,0 +1,269 @@
+# Cultural Heritage Artworks Ontology v2.0
+# Turtle serialization semantically equivalent to the supplied RDF/XML ontology.
+# Base namespace: https://example.ontology.it/onto/cultural/
+
+@prefix arco-arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix cis: <http://dati.beniculturali.it/cis/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+@prefix cult: <https://example.ontology.it/onto/cultural/> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tiapit: <https://w3id.org/italia/onto/TI/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cult: a owl:Ontology ;
+    rdfs:label "Cultural Heritage Artworks Ontology"@en,
+        "Ontologia delle opere del patrimonio culturale"@it ;
+    rdfs:comment "Ontology for representing cultural artworks, their storage or exhibition locations, municipalities, and temporal references, while reusing concepts from ArCo, Cultural-ON and OntoPiA."@en,
+        "Ontologia per rappresentare opere culturali, luoghi di conservazione o esposizione, comuni e riferimenti temporali, riusando concetti di ArCo, Cultural-ON e OntoPiA."@it ;
+    owl:versionInfo "Version 2.0"@en,
+        "Versione 2.0"@it .
+
+cult:CulturalInstituteOrSiteLocation a owl:Class ;
+    rdfs:label "Cultural Institute or Site Location"@en,
+        "Istituto o luogo della cultura"@it ;
+    rdfs:comment "An artwork location corresponding to a cultural institute or site, aligned with the Cultural-ON class CulturalInstituteOrSite."@en,
+        "Luogo dell'opera che corrisponde a un istituto o luogo della cultura, allineato alla classe CulturalInstituteOrSite di Cultural-ON."@it ;
+    rdfs:subClassOf cis:CulturalInstituteOrSite,
+        cult:ArtworkLocation .
+
+cult:Painting a owl:Class ;
+    rdfs:label "Painting"@en,
+        "Dipinto"@it ;
+    rdfs:comment "A painting represented as a specialized artwork and as an ArCo historic or artistic property."@en,
+        "Dipinto rappresentato come specializzazione di Opera e come bene storico o artistico secondo ArCo."@it ;
+    rdfs:subClassOf cult:ArtWork,
+        arco-arco:HistoricOrArtisticProperty .
+
+cult:PrivateResidence a owl:Class ;
+    rdfs:label "Private Residence"@en,
+        "Residenza privata"@it ;
+    rdfs:comment "A private residence used as the storage, preservation or exhibition location of an artwork."@en,
+        "Residenza privata utilizzata come luogo di conservazione, custodia o esposizione di un'opera."@it ;
+    rdfs:subClassOf cult:ArtworkLocation .
+
+cult:DateReference a owl:Class ;
+    rdfs:label "Date Reference"@en,
+        "Riferimento a data"@it ;
+    rdfs:comment "Temporal reference expressed as one complete calendar date, for example 1986-12-31."@en,
+        "Riferimento temporale espresso come una data di calendario completa, ad esempio 1986-12-31."@it ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:date ;
+            owl:onProperty tiapit:date ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        cult:TimeReference,
+        tiapit:TimeInstant .
+
+cult:artworkId a owl:DatatypeProperty ;
+    rdfs:label "artwork identifier"@en,
+        "identificativo dell'opera"@it ;
+    rdfs:comment "Identifier assigned to the artwork in the source dataset."@en,
+        "Codice identificativo assegnato all'opera nel dataset sorgente."@it ;
+    rdfs:domain cult:ArtWork ;
+    rdfs:range xsd:string .
+
+cult:artworkLocationId a owl:DatatypeProperty ;
+    rdfs:label "artwork location identifier"@en,
+        "identificativo del luogo dell'opera"@it ;
+    rdfs:comment "Identifier of the location in which the artwork is stored, preserved or exhibited."@en,
+        "Codice identificativo del luogo nel quale l'opera è conservata, custodita o esposta."@it ;
+    rdfs:domain cult:ArtworkLocation ;
+    rdfs:range xsd:string .
+
+cult:artworkLocationName a owl:DatatypeProperty ;
+    rdfs:label "artwork location name"@en,
+        "nome del luogo dell'opera"@it ;
+    rdfs:comment "Name of the location in which the artwork is stored, preserved or exhibited."@en,
+        "Nome del luogo nel quale l'opera è conservata, custodita o esposta."@it ;
+    rdfs:domain cult:ArtworkLocation ;
+    rdfs:range xsd:string .
+
+cult:centuryLabel a owl:DatatypeProperty ;
+    rdfs:label "century label"@en,
+        "etichetta del secolo"@it ;
+    rdfs:comment "Textual label identifying a century or a portion of a century."@en,
+        "Etichetta testuale che identifica un secolo o una porzione di secolo."@it ;
+    rdfs:domain cult:CenturyReference ;
+    rdfs:range xsd:string .
+
+cult:containsArtWork a owl:ObjectProperty ;
+    rdfs:label "contains artwork"@en,
+        "contiene opera"@it ;
+    rdfs:comment "Links an artwork location to an artwork contained or hosted there. It is the inverse of hasArtworkLocation."@en,
+        "Collega un luogo dell'opera a un'opera contenuta o ospitata al suo interno. È l'inversa di hasArtworkLocation."@it ;
+    rdfs:domain cult:ArtworkLocation ;
+    rdfs:range cult:ArtWork ;
+    owl:inverseOf cult:hasArtworkLocation .
+
+cult:description a owl:DatatypeProperty ;
+    rdfs:label "description"@en,
+        "descrizione"@it ;
+    rdfs:comment "Optional textual description of the artwork."@en,
+        "Descrizione testuale facoltativa dell'opera."@it ;
+    rdfs:domain cult:ArtWork ;
+    rdfs:range xsd:string .
+
+cult:endYear a owl:DatatypeProperty ;
+    rdfs:label "end year"@en,
+        "anno finale"@it ;
+    rdfs:comment "Ending year of a year-based temporal interval."@en,
+        "Anno finale di un intervallo temporale espresso per anni."@it ;
+    rdfs:domain cult:YearRange ;
+    rdfs:range xsd:gYear .
+
+cult:hasTimeReference a owl:ObjectProperty ;
+    rdfs:label "has time reference"@en,
+        "ha riferimento temporale"@it ;
+    rdfs:comment "Associates an artwork with the temporal reference used to date or chronologically describe it."@en,
+        "Associa un'opera al riferimento temporale utilizzato per datarla o descriverla cronologicamente."@it ;
+    rdfs:domain cult:ArtWork ;
+    rdfs:range cult:TimeReference .
+
+cult:hostsArtworkLocation a owl:ObjectProperty ;
+    rdfs:label "hosts artwork location"@en,
+        "ospita luogo dell'opera"@it ;
+    rdfs:comment "Links a municipality to artwork locations situated within it. It is the inverse of isLocatedIn."@en,
+        "Collega un comune ai luoghi dell'opera situati nel suo territorio. È l'inversa di isLocatedIn."@it ;
+    rdfs:domain cult:Municipality ;
+    rdfs:range cult:ArtworkLocation ;
+    owl:inverseOf cult:isLocatedIn .
+
+cult:istatCode a owl:DatatypeProperty ;
+    rdfs:label "ISTAT code"@en,
+        "codice ISTAT"@it ;
+    rdfs:comment "ISTAT identifier of the municipality, stored as a string in order to preserve leading zeros."@en,
+        "Codice ISTAT del comune, memorizzato come stringa per preservare eventuali zeri iniziali."@it ;
+    rdfs:domain cult:Municipality ;
+    rdfs:range xsd:string .
+
+cult:startYear a owl:DatatypeProperty ;
+    rdfs:label "start year"@en,
+        "anno iniziale"@it ;
+    rdfs:comment "Starting year of a year-based temporal interval."@en,
+        "Anno iniziale di un intervallo temporale espresso per anni."@it ;
+    rdfs:domain cult:YearRange ;
+    rdfs:range xsd:gYear .
+
+cult:title a owl:DatatypeProperty ;
+    rdfs:label "title"@en,
+        "titolo"@it ;
+    rdfs:comment "Title of the artwork."@en,
+        "Titolo dell'opera."@it ;
+    rdfs:domain cult:ArtWork ;
+    rdfs:range xsd:string .
+
+cult:CenturyReference a owl:Class ;
+    rdfs:label "Century Reference"@en,
+        "Riferimento al secolo"@it ;
+    rdfs:comment "Temporal reference expressed through a textual century or part-of-century label, such as \"second half of the 19th century\"."@en,
+        "Riferimento temporale espresso tramite un'etichetta testuale relativa a un secolo o a una sua porzione, come \"seconda metà del XIX secolo\"."@it ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty cult:centuryLabel ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        cult:TimeReference .
+
+cult:hasArtworkLocation a owl:ObjectProperty ;
+    rdfs:label "has artwork location"@en,
+        "ha luogo dell'opera"@it ;
+    rdfs:comment "Links an artwork to the location in which it is stored, preserved or exhibited."@en,
+        "Collega un'opera al luogo nel quale è conservata, custodita o esposta."@it ;
+    rdfs:domain cult:ArtWork ;
+    rdfs:range cult:ArtworkLocation ;
+    owl:inverseOf cult:containsArtWork .
+
+cult:isLocatedIn a owl:ObjectProperty ;
+    rdfs:label "is located in"@en,
+        "è situato in"@it ;
+    rdfs:comment "Links an artwork location to the municipality in which it is situated."@en,
+        "Collega un luogo dell'opera al comune nel quale è situato."@it ;
+    rdfs:domain cult:ArtworkLocation ;
+    rdfs:range cult:Municipality ;
+    owl:inverseOf cult:hostsArtworkLocation .
+
+cult:YearRange a owl:Class ;
+    rdfs:label "Year Range"@en,
+        "Intervallo di anni"@it ;
+    rdfs:comment "Temporal reference expressed as an interval bounded by one starting year and one ending year, for example 1756-1762."@en,
+        "Riferimento temporale espresso come intervallo delimitato da un anno iniziale e un anno finale, ad esempio 1756-1762."@it ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:gYear ;
+            owl:onProperty cult:startYear ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:gYear ;
+            owl:onProperty cult:endYear ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        cult:TimeReference,
+        tiapit:TimeInterval .
+
+cult:Municipality a owl:Class ;
+    rdfs:label "Municipality"@en,
+        "Comune"@it ;
+    rdfs:comment "Municipality in which an artwork location is situated. It is aligned with the OntoPiA CLV class City and is identified by its ISTAT code and name."@en,
+        "Comune nel quale è situato un luogo dell'opera. È allineato alla classe City di CLV-OntoPiA ed è identificato dal codice ISTAT e dal nome."@it ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty l0:name ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty cult:istatCode ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        clv:City .
+
+cult:TimeReference a owl:Class ;
+    rdfs:label "Time Reference"@en,
+        "Riferimento temporale"@it ;
+    rdfs:comment "General temporal reference associated with an artwork. It must be represented as exactly one of: a complete date, a year range, or a century-based textual reference."@en,
+        "Riferimento temporale generale associato a un'opera. Deve essere rappresentato in una sola delle seguenti forme: data completa, intervallo di anni oppure riferimento testuale al secolo."@it ;
+    rdfs:subClassOf tiapit:TemporalEntity ;
+    owl:disjointUnionOf ( cult:DateReference cult:YearRange cult:CenturyReference ) .
+
+cult:ArtWork a owl:Class ;
+    rdfs:label "Artwork"@en,
+        "Opera"@it ;
+    rdfs:comment "A cultural artwork described by the dataset. Each artwork has one identifier, one title, at most one textual description, one artwork location and one temporal reference."@en,
+        "Opera culturale descritta dal dataset. Ogni opera ha un identificativo, un titolo, al massimo una descrizione testuale, un luogo di conservazione e un riferimento temporale."@it ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty cult:description ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty cult:artworkId ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass cult:TimeReference ;
+            owl:onProperty cult:hasTimeReference ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty cult:title ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass cult:ArtworkLocation ;
+            owl:onProperty cult:hasArtworkLocation ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        arco-arco:CulturalProperty .
+
+cult:ArtworkLocation a owl:Class ;
+    rdfs:label "Artwork Location"@en,
+        "Luogo dell'opera"@it ;
+    rdfs:comment "General class for places in which an artwork may be stored, preserved or exhibited. A location has one identifier, one name and belongs to one municipality."@en,
+        "Classe generale dei luoghi nei quali un'opera può essere conservata, custodita o esposta. Un luogo ha un identificativo, un nome e appartiene a un comune."@it ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass cult:Municipality ;
+            owl:onProperty cult:isLocatedIn ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty cult:artworkLocationName ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty cult:artworkLocationId ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
+

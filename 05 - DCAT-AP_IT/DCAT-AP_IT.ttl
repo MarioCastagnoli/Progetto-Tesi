@@ -1,0 +1,132 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatapit: <http://dati.gov.it/onto/dcatapit#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================================
+# CATALOGO
+# ============================================================
+
+<https://example.lod.it/data/catalog/cultural-heritage-artworks>
+    a dcatapit:Catalog, dcat:Catalog ;
+    dct:title "Catalogo dati.cultura - Dati aperti del patrimonio culturale"@it ;
+    dct:title "dati.cultura Catalog - Open Cultural Heritage Data"@en ;
+    dct:description "Catalogo del progetto dati.cultura per la pubblicazione di dataset aperti relativi al patrimonio culturale."@it ;
+    dct:description "Catalog of the dati.cultura project for the publication of open datasets related to cultural heritage."@en ;
+    dct:issued "2026-09-02"^^xsd:date ;
+    dct:modified "2026-09-03"^^xsd:date ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ITA> ;
+    dct:publisher <https://example.lod.it/data/organisation/m_bac> ;
+    dcat:dataset <https://example.lod.it/data/dataset/cultural-heritage-artworks> .
+
+
+# ============================================================
+# AGENTE: TITOLARE / EDITORE
+# ============================================================
+
+<https://example.lod.it/data/organisation/m_bac>
+    a dcatapit:Agent, foaf:Agent ;
+    dct:identifier "m_bac" ;
+    foaf:name "Ministero della Cultura"@it ;
+    foaf:name "Ministry of Culture"@en .
+
+
+# ============================================================
+# DATASET
+# ============================================================
+
+<https://example.lod.it/data/dataset/cultural-heritage-artworks>
+    a dcatapit:Dataset, dcat:Dataset ;
+    dct:identifier "m_bac:cultural-heritage-artworks" ;
+    dct:title "Opere d'arte di tipo dipinto"@it ;
+    dct:title "Painted artworks"@en ;
+    dct:description "Dataset relativo a opere d'arte di tipo dipinto, con identificativo, titolo, descrizione quando disponibile, riferimento temporale, luogo di conservazione o esposizione e comune identificato tramite codice ISTAT."@it ;
+    dct:description "Dataset about painted artworks, including identifier, title, description when available, time reference, conservation or exhibition location, and municipality identified through its ISTAT code."@en ;
+    dct:issued "2026-09-02"^^xsd:date ;
+    dct:modified "2026-09-03"^^xsd:date ;
+    dct:publisher <https://example.lod.it/data/organisation/m_bac> ;
+    dct:rightsHolder <https://example.lod.it/data/organisation/m_bac> ;
+    dcat:theme <http://publications.europa.eu/resource/authority/data-theme/EDUC> ;
+    dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/UNKNOWN> ;
+    dcat:distribution
+        <https://example.lod.it/data/distribution/cultural-heritage-artworks-csv>,
+        <https://example.lod.it/data/distribution/cultural-heritage-artworks-json>,
+        <https://example.lod.it/data/distribution/cultural-heritage-artworks-rdf-turtle>,
+        <https://example.lod.it/data/distribution/cultural-heritage-artworks-json-ld>,
+        <https://example.lod.it/data/distribution/cultural-heritage-artworks-rdf-xml> .
+
+
+# ============================================================
+# DISTRIBUZIONE CSV
+# ============================================================
+
+<https://example.lod.it/data/distribution/cultural-heritage-artworks-csv>
+    a dcatapit:Distribution, dcat:Distribution ;
+    dct:title "Opere d'arte di tipo dipinto - CSV"@it ;
+    dct:description "Distribuzione tabellare CSV del dataset."@it ;
+    dct:modified "2026-09-02"^^xsd:date ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+    dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+    dcat:accessURL <https://example.lod.it/data/download/opere_dipinti.csv> ;
+    dcat:downloadURL <https://example.lod.it/data/download/opere_dipinti.csv> .
+
+
+# ============================================================
+# DISTRIBUZIONE JSON
+# ============================================================
+
+<https://example.lod.it/data/distribution/cultural-heritage-artworks-json>
+    a dcatapit:Distribution, dcat:Distribution ;
+    dct:title "Opere d'arte di tipo dipinto - JSON"@it ;
+    dct:description "Distribuzione JSON del medesimo dataset in forma strutturata a coppie chiave-valore."@it ;
+    dct:modified "2026-09-02"^^xsd:date ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
+    dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+    dcat:accessURL <https://example.lod.it/data/download/opere_dipinti.json> ;
+    dcat:downloadURL <https://example.lod.it/data/download/opere_dipinti.json> .
+
+
+# ============================================================
+# DISTRIBUZIONE RDF/TURTLE
+# ============================================================
+
+<https://example.lod.it/data/distribution/cultural-heritage-artworks-rdf-turtle>
+    a dcatapit:Distribution, dcat:Distribution ;
+    dct:title "Opere d'arte di tipo dipinto - RDF/Turtle"@it ;
+    dct:description "Distribuzione Linked Open Data in RDF/Turtle, generata tramite mapping YARRRML/RML e conforme all'ontologia del progetto."@it ;
+    dct:modified "2026-09-03"^^xsd:date ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
+    dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+    dcat:accessURL <https://example.lod.it/data/download/RDF_Turtle_Finale.ttl> ;
+    dcat:downloadURL <https://example.lod.it/data/download/RDF_Turtle_Finale.ttl> .
+
+
+# ============================================================
+# DISTRIBUZIONE JSON-LD
+# ============================================================
+
+<https://example.lod.it/data/distribution/cultural-heritage-artworks-json-ld>
+    a dcatapit:Distribution, dcat:Distribution ;
+    dct:title "Opere d'arte di tipo dipinto - JSON-LD"@it ;
+    dct:description "Serializzazione JSON-LD dello stesso grafo RDF pubblicato nella distribuzione RDF/Turtle."@it ;
+    dct:modified "2026-09-03"^^xsd:date ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/JSON_LD> ;
+    dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+    dcat:accessURL <https://example.lod.it/data/download/RDF_Turtle_Finale.jsonld> ;
+    dcat:downloadURL <https://example.lod.it/data/download/RDF_Turtle_Finale.jsonld> .
+
+
+# ============================================================
+# DISTRIBUZIONE RDF/XML
+# ============================================================
+
+<https://example.lod.it/data/distribution/cultural-heritage-artworks-rdf-xml>
+    a dcatapit:Distribution, dcat:Distribution ;
+    dct:title "Opere d'arte di tipo dipinto - RDF/XML"@it ;
+    dct:description "Serializzazione RDF/XML dello stesso grafo RDF pubblicato nella distribuzione RDF/Turtle."@it ;
+    dct:modified "2026-09-03"^^xsd:date ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_XML> ;
+    dct:license <https://w3id.org/italia/controlled-vocabulary/licences/A21_CCBY40> ;
+    dcat:accessURL <https://example.lod.it/data/download/RDF_Turtle_Finale.rdf> ;
+    dcat:downloadURL <https://example.lod.it/data/download/RDF_Turtle_Finale.rdf> .

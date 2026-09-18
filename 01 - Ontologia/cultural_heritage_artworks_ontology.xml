@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xml:base="https://example.ontology.it/onto/cultural/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:cult="https://example.ontology.it/onto/cultural/"
+    xmlns:arco-arco="https://w3id.org/arco/ontology/arco/"
+    xmlns:cis="http://dati.beniculturali.it/cis/"
+    xmlns:tiapit="https://w3id.org/italia/onto/TI/"
+    xmlns:l0="https://w3id.org/italia/onto/l0/"
+    xmlns:clv="https://w3id.org/italia/onto/CLV/">
+
+    <!-- ================================================================== -->
+    <!-- ONTOLOGY METADATA                                                  -->
+    <!-- ================================================================== -->
+
+    <owl:Ontology rdf:about="https://example.ontology.it/onto/cultural/">
+        <rdfs:label xml:lang="en">Cultural Heritage Artworks Ontology</rdfs:label>
+        <rdfs:label xml:lang="it">Ontologia delle opere del patrimonio culturale</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Ontology for representing cultural artworks, their storage or exhibition locations, municipalities, and temporal references, while reusing concepts from ArCo, Cultural-ON and OntoPiA.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Ontologia per rappresentare opere culturali, luoghi di conservazione o esposizione, comuni e riferimenti temporali, riusando concetti di ArCo, Cultural-ON e OntoPiA.</rdfs:comment>
+
+        <owl:versionInfo xml:lang="en">Version 2.0</owl:versionInfo>
+        <owl:versionInfo xml:lang="it">Versione 2.0</owl:versionInfo>
+    </owl:Ontology>
+
+
+    <!-- ================================================================== -->
+    <!-- CLASSES: ARTWORKS                                                  -->
+    <!-- ================================================================== -->
+
+    <owl:Class rdf:about="https://example.ontology.it/onto/cultural/ArtWork">
+        <rdfs:label xml:lang="en">Artwork</rdfs:label>
+        <rdfs:label xml:lang="it">Opera</rdfs:label>
+
+        <rdfs:comment xml:lang="en">A cultural artwork described by the dataset. Each artwork has one identifier, one title, at most one textual description, one artwork location and one temporal reference.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Opera culturale descritta dal dataset. Ogni opera ha un identificativo, un titolo, al massimo una descrizione testuale, un luogo di conservazione e un riferimento temporale.</rdfs:comment>
+
+        <rdfs:subClassOf rdf:resource="https://w3id.org/arco/ontology/arco/CulturalProperty"/>
+
+        <!-- artworkId: exactly 1 xsd:string -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/artworkId"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- title: exactly 1 xsd:string -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/title"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- description: 0..1 xsd:string -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/description"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- hasArtworkLocation: exactly 1 ArtworkLocation -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/hasArtworkLocation"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://example.ontology.it/onto/cultural/ArtworkLocation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- hasTimeReference: exactly 1 TimeReference -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/hasTimeReference"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://example.ontology.it/onto/cultural/TimeReference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="https://example.ontology.it/onto/cultural/Painting">
+        <rdfs:label xml:lang="en">Painting</rdfs:label>
+        <rdfs:label xml:lang="it">Dipinto</rdfs:label>
+
+        <rdfs:comment xml:lang="en">A painting represented as a specialized artwork and as an ArCo historic or artistic property.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Dipinto rappresentato come specializzazione di Opera e come bene storico o artistico secondo ArCo.</rdfs:comment>
+
+        <rdfs:subClassOf rdf:resource="https://example.ontology.it/onto/cultural/ArtWork"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/arco/ontology/arco/HistoricOrArtisticProperty"/>
+    </owl:Class>
+
+
+    <!-- ================================================================== -->
+    <!-- CLASSES: ARTWORK LOCATIONS AND MUNICIPALITIES                      -->
+    <!-- ================================================================== -->
+
+    <owl:Class rdf:about="https://example.ontology.it/onto/cultural/ArtworkLocation">
+        <rdfs:label xml:lang="en">Artwork Location</rdfs:label>
+        <rdfs:label xml:lang="it">Luogo dell'opera</rdfs:label>
+
+        <rdfs:comment xml:lang="en">General class for places in which an artwork may be stored, preserved or exhibited. A location has one identifier, one name and belongs to one municipality.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Classe generale dei luoghi nei quali un'opera può essere conservata, custodita o esposta. Un luogo ha un identificativo, un nome e appartiene a un comune.</rdfs:comment>
+
+        <!-- artworkLocationId: exactly 1 xsd:string -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/artworkLocationId"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- artworkLocationName: exactly 1 xsd:string -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/artworkLocationName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- isLocatedIn: exactly 1 Municipality -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://example.ontology.it/onto/cultural/Municipality"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="https://example.ontology.it/onto/cultural/CulturalInstituteOrSiteLocation">
+        <rdfs:label xml:lang="en">Cultural Institute or Site Location</rdfs:label>
+        <rdfs:label xml:lang="it">Istituto o luogo della cultura</rdfs:label>
+
+        <rdfs:comment xml:lang="en">An artwork location corresponding to a cultural institute or site, aligned with the Cultural-ON class CulturalInstituteOrSite.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Luogo dell'opera che corrisponde a un istituto o luogo della cultura, allineato alla classe CulturalInstituteOrSite di Cultural-ON.</rdfs:comment>
+
+        <rdfs:subClassOf rdf:resource="https://example.ontology.it/onto/cultural/ArtworkLocation"/>
+        <rdfs:subClassOf rdf:resource="http://dati.beniculturali.it/cis/CulturalInstituteOrSite"/>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="https://example.ontology.it/onto/cultural/PrivateResidence">
+        <rdfs:label xml:lang="en">Private Residence</rdfs:label>
+        <rdfs:label xml:lang="it">Residenza privata</rdfs:label>
+
+        <rdfs:comment xml:lang="en">A private residence used as the storage, preservation or exhibition location of an artwork.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Residenza privata utilizzata come luogo di conservazione, custodia o esposizione di un'opera.</rdfs:comment>
+
+        <rdfs:subClassOf rdf:resource="https://example.ontology.it/onto/cultural/ArtworkLocation"/>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="https://example.ontology.it/onto/cultural/Municipality">
+        <rdfs:label xml:lang="en">Municipality</rdfs:label>
+        <rdfs:label xml:lang="it">Comune</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Municipality in which an artwork location is situated. It is aligned with the OntoPiA CLV class City and is identified by its ISTAT code and name.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Comune nel quale è situato un luogo dell'opera. È allineato alla classe City di CLV-OntoPiA ed è identificato dal codice ISTAT e dal nome.</rdfs:comment>
+
+        <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/CLV/City"/>
+
+        <!-- istatCode: exactly 1 xsd:string -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/istatCode"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- l0:name: exactly 1 xsd:string -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/italia/onto/l0/name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+    <!-- ================================================================== -->
+    <!-- CLASSES: TEMPORAL REFERENCES                                       -->
+    <!-- ================================================================== -->
+
+    <owl:Class rdf:about="https://example.ontology.it/onto/cultural/TimeReference">
+        <rdfs:label xml:lang="en">Time Reference</rdfs:label>
+        <rdfs:label xml:lang="it">Riferimento temporale</rdfs:label>
+
+        <rdfs:comment xml:lang="en">General temporal reference associated with an artwork. It must be represented as exactly one of: a complete date, a year range, or a century-based textual reference.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Riferimento temporale generale associato a un'opera. Deve essere rappresentato in una sola delle seguenti forme: data completa, intervallo di anni oppure riferimento testuale al secolo.</rdfs:comment>
+
+        <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/TI/TemporalEntity"/>
+
+        <!-- The three supported temporal forms are exhaustive and pairwise disjoint. -->
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://example.ontology.it/onto/cultural/DateReference"/>
+            <rdf:Description rdf:about="https://example.ontology.it/onto/cultural/YearRange"/>
+            <rdf:Description rdf:about="https://example.ontology.it/onto/cultural/CenturyReference"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="https://example.ontology.it/onto/cultural/DateReference">
+        <rdfs:label xml:lang="en">Date Reference</rdfs:label>
+        <rdfs:label xml:lang="it">Riferimento a data</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Temporal reference expressed as one complete calendar date, for example 1986-12-31.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Riferimento temporale espresso come una data di calendario completa, ad esempio 1986-12-31.</rdfs:comment>
+
+        <rdfs:subClassOf rdf:resource="https://example.ontology.it/onto/cultural/TimeReference"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/TI/TimeInstant"/>
+
+        <!-- tiapit:date: exactly 1 xsd:date -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/italia/onto/TI/date"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="https://example.ontology.it/onto/cultural/YearRange">
+        <rdfs:label xml:lang="en">Year Range</rdfs:label>
+        <rdfs:label xml:lang="it">Intervallo di anni</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Temporal reference expressed as an interval bounded by one starting year and one ending year, for example 1756-1762.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Riferimento temporale espresso come intervallo delimitato da un anno iniziale e un anno finale, ad esempio 1756-1762.</rdfs:comment>
+
+        <rdfs:subClassOf rdf:resource="https://example.ontology.it/onto/cultural/TimeReference"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/italia/onto/TI/TimeInterval"/>
+
+        <!-- startYear: exactly 1 xsd:gYear -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/startYear"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+
+        <!-- endYear: exactly 1 xsd:gYear -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/endYear"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+    <owl:Class rdf:about="https://example.ontology.it/onto/cultural/CenturyReference">
+        <rdfs:label xml:lang="en">Century Reference</rdfs:label>
+        <rdfs:label xml:lang="it">Riferimento al secolo</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Temporal reference expressed through a textual century or part-of-century label, such as "second half of the 19th century".</rdfs:comment>
+        <rdfs:comment xml:lang="it">Riferimento temporale espresso tramite un'etichetta testuale relativa a un secolo o a una sua porzione, come "seconda metà del XIX secolo".</rdfs:comment>
+
+        <rdfs:subClassOf rdf:resource="https://example.ontology.it/onto/cultural/TimeReference"/>
+
+        <!-- centuryLabel: exactly 1 xsd:string -->
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://example.ontology.it/onto/cultural/centuryLabel"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+    <!-- ================================================================== -->
+    <!-- OBJECT PROPERTIES                                                  -->
+    <!-- ================================================================== -->
+
+    <owl:ObjectProperty rdf:about="https://example.ontology.it/onto/cultural/hasArtworkLocation">
+        <rdfs:label xml:lang="en">has artwork location</rdfs:label>
+        <rdfs:label xml:lang="it">ha luogo dell'opera</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Links an artwork to the location in which it is stored, preserved or exhibited.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Collega un'opera al luogo nel quale è conservata, custodita o esposta.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/ArtWork"/>
+        <rdfs:range rdf:resource="https://example.ontology.it/onto/cultural/ArtworkLocation"/>
+        <owl:inverseOf rdf:resource="https://example.ontology.it/onto/cultural/containsArtWork"/>
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="https://example.ontology.it/onto/cultural/containsArtWork">
+        <rdfs:label xml:lang="en">contains artwork</rdfs:label>
+        <rdfs:label xml:lang="it">contiene opera</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Links an artwork location to an artwork contained or hosted there. It is the inverse of hasArtworkLocation.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Collega un luogo dell'opera a un'opera contenuta o ospitata al suo interno. È l'inversa di hasArtworkLocation.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/ArtworkLocation"/>
+        <rdfs:range rdf:resource="https://example.ontology.it/onto/cultural/ArtWork"/>
+        <owl:inverseOf rdf:resource="https://example.ontology.it/onto/cultural/hasArtworkLocation"/>
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="https://example.ontology.it/onto/cultural/isLocatedIn">
+        <rdfs:label xml:lang="en">is located in</rdfs:label>
+        <rdfs:label xml:lang="it">è situato in</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Links an artwork location to the municipality in which it is situated.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Collega un luogo dell'opera al comune nel quale è situato.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/ArtworkLocation"/>
+        <rdfs:range rdf:resource="https://example.ontology.it/onto/cultural/Municipality"/>
+        <owl:inverseOf rdf:resource="https://example.ontology.it/onto/cultural/hostsArtworkLocation"/>
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="https://example.ontology.it/onto/cultural/hostsArtworkLocation">
+        <rdfs:label xml:lang="en">hosts artwork location</rdfs:label>
+        <rdfs:label xml:lang="it">ospita luogo dell'opera</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Links a municipality to artwork locations situated within it. It is the inverse of isLocatedIn.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Collega un comune ai luoghi dell'opera situati nel suo territorio. È l'inversa di isLocatedIn.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/Municipality"/>
+        <rdfs:range rdf:resource="https://example.ontology.it/onto/cultural/ArtworkLocation"/>
+        <owl:inverseOf rdf:resource="https://example.ontology.it/onto/cultural/isLocatedIn"/>
+    </owl:ObjectProperty>
+
+
+    <owl:ObjectProperty rdf:about="https://example.ontology.it/onto/cultural/hasTimeReference">
+        <rdfs:label xml:lang="en">has time reference</rdfs:label>
+        <rdfs:label xml:lang="it">ha riferimento temporale</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Associates an artwork with the temporal reference used to date or chronologically describe it.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Associa un'opera al riferimento temporale utilizzato per datarla o descriverla cronologicamente.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/ArtWork"/>
+        <rdfs:range rdf:resource="https://example.ontology.it/onto/cultural/TimeReference"/>
+    </owl:ObjectProperty>
+
+
+    <!-- ================================================================== -->
+    <!-- DATATYPE PROPERTIES: ARTWORK                                       -->
+    <!-- ================================================================== -->
+
+    <owl:DatatypeProperty rdf:about="https://example.ontology.it/onto/cultural/artworkId">
+        <rdfs:label xml:lang="en">artwork identifier</rdfs:label>
+        <rdfs:label xml:lang="it">identificativo dell'opera</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Identifier assigned to the artwork in the source dataset.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Codice identificativo assegnato all'opera nel dataset sorgente.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/ArtWork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://example.ontology.it/onto/cultural/title">
+        <rdfs:label xml:lang="en">title</rdfs:label>
+        <rdfs:label xml:lang="it">titolo</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Title of the artwork.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Titolo dell'opera.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/ArtWork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://example.ontology.it/onto/cultural/description">
+        <rdfs:label xml:lang="en">description</rdfs:label>
+        <rdfs:label xml:lang="it">descrizione</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Optional textual description of the artwork.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Descrizione testuale facoltativa dell'opera.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/ArtWork"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- ================================================================== -->
+    <!-- DATATYPE PROPERTIES: LOCATIONS AND MUNICIPALITIES                   -->
+    <!-- ================================================================== -->
+
+    <owl:DatatypeProperty rdf:about="https://example.ontology.it/onto/cultural/artworkLocationId">
+        <rdfs:label xml:lang="en">artwork location identifier</rdfs:label>
+        <rdfs:label xml:lang="it">identificativo del luogo dell'opera</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Identifier of the location in which the artwork is stored, preserved or exhibited.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Codice identificativo del luogo nel quale l'opera è conservata, custodita o esposta.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/ArtworkLocation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://example.ontology.it/onto/cultural/artworkLocationName">
+        <rdfs:label xml:lang="en">artwork location name</rdfs:label>
+        <rdfs:label xml:lang="it">nome del luogo dell'opera</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Name of the location in which the artwork is stored, preserved or exhibited.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Nome del luogo nel quale l'opera è conservata, custodita o esposta.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/ArtworkLocation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://example.ontology.it/onto/cultural/istatCode">
+        <rdfs:label xml:lang="en">ISTAT code</rdfs:label>
+        <rdfs:label xml:lang="it">codice ISTAT</rdfs:label>
+
+        <rdfs:comment xml:lang="en">ISTAT identifier of the municipality, stored as a string in order to preserve leading zeros.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Codice ISTAT del comune, memorizzato come stringa per preservare eventuali zeri iniziali.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/Municipality"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- ================================================================== -->
+    <!-- DATATYPE PROPERTIES: TEMPORAL REFERENCES                           -->
+    <!-- ================================================================== -->
+
+    <owl:DatatypeProperty rdf:about="https://example.ontology.it/onto/cultural/startYear">
+        <rdfs:label xml:lang="en">start year</rdfs:label>
+        <rdfs:label xml:lang="it">anno iniziale</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Starting year of a year-based temporal interval.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Anno iniziale di un intervallo temporale espresso per anni.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/YearRange"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://example.ontology.it/onto/cultural/endYear">
+        <rdfs:label xml:lang="en">end year</rdfs:label>
+        <rdfs:label xml:lang="it">anno finale</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Ending year of a year-based temporal interval.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Anno finale di un intervallo temporale espresso per anni.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/YearRange"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+    </owl:DatatypeProperty>
+
+
+    <owl:DatatypeProperty rdf:about="https://example.ontology.it/onto/cultural/centuryLabel">
+        <rdfs:label xml:lang="en">century label</rdfs:label>
+        <rdfs:label xml:lang="it">etichetta del secolo</rdfs:label>
+
+        <rdfs:comment xml:lang="en">Textual label identifying a century or a portion of a century.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Etichetta testuale che identifica un secolo o una porzione di secolo.</rdfs:comment>
+
+        <rdfs:domain rdf:resource="https://example.ontology.it/onto/cultural/CenturyReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

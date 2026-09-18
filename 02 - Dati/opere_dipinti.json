@@ -1,0 +1,131 @@
+[
+  {
+    "artwork_id": "0800686820",
+    "artwork_title": "I fer dl'amstir",
+    "artwork_description": "Dipinto su tela tensionata ad un telaio con biette di espansione agli angolari, il telaio è posto all'interno di una cornice doppia con passepartout interno rivestito di tela bianca e vetro di protezione frontale ed un profilo esterno modanato e argentato. La scena mostra un consesso di persone in abiti civili che tengono dietro in corteo funebre ad un carretto trainato da una coppia di giovenche bianche nella stradina che si inerpica a raggiungere un borgo in cima ad una collina",
+    "time_reference": "1986-12-31",
+    "cultural_site_id": "1234",
+    "cultural_site_name": "Palazzo della Residenza della Cassa dei Risparmi di Forlì",
+    "istat_code": "040012",
+    "place_name": "Forlì"
+  },
+  {
+    "artwork_id": "0500638012",
+    "artwork_title": "Giovane donna in abito bruno, con collarino di pizzo bianco e nastro rosso",
+    "artwork_description": "Tela di formato verticale, rappresenta una fanciulla con pizzo e nastro rosso al collo",
+    "time_reference": "1756-1762",
+    "cultural_site_id": "1469952786491",
+    "cultural_site_name": "Palazzo Pellegrini a S. Cecilia",
+    "istat_code": "023091",
+    "place_name": "Verona"
+  },
+  {
+    "artwork_id": "0500717049",
+    "artwork_title": "Ritratto di gentiluomo",
+    "artwork_description": "Tela di piccole dimensioni, rappresenta il ritratto di una figura maschile, a mezzo busto, posto di tre quarti",
+    "time_reference": "XVII secolo",
+    "cultural_site_id": "1469952786491",
+    "cultural_site_name": "Palazzo Pellegrini a S. Cecilia",
+    "istat_code": "023091",
+    "place_name": "Verona"
+  },
+  {
+    "artwork_id": "0500717120",
+    "artwork_title": "Ritratto di Gianna",
+    "artwork_description": "Tavola di formato verticale, rappresenta il ritratto di una giovane donna",
+    "time_reference": "XX secolo",
+    "cultural_site_id": "1469952786491",
+    "cultural_site_name": "Palazzo Pellegrini a S. Cecilia",
+    "istat_code": "023091",
+    "place_name": "Verona"
+  },
+  {
+    "artwork_id": "1400079575",
+    "artwork_title": "All'acqua Santa, dopo il temporale",
+    "artwork_description": "Dipinto a olio su cartoncino raffigurante una veduta della campagna romana, colta nella quiete dopo un temporale, nel cielo, infatti, si affrontano nubi maestose e squarci di sereno, sullo sfondo si riconosce la sagoma del Mausoleo di Cecilia Metella sulla via Appia",
+    "time_reference": "Fine XIX secolo",
+    "cultural_site_id": "2c095",
+    "cultural_site_name": "Villa Praitano",
+    "istat_code": "070006",
+    "place_name": "Campobasso"
+  },
+  {
+    "artwork_id": "1400001122-11",
+    "artwork_title": "Resurrezione di Cristo",
+    "artwork_description": "Dipinto",
+    "time_reference": "XVII secolo",
+    "cultural_site_id": "1489147295188",
+    "cultural_site_name": "Chiesa di Santa Maria Assunta",
+    "istat_code": "070024",
+    "place_name": "Fossalto"
+  },
+  {
+    "artwork_id": "0500717074",
+    "artwork_title": "Pianta prospettica della città di Belluno",
+    "artwork_description": "Tela di formato orizzontale, rappresenta una vista a volo d'uccello della città di Belluno, in alto al centro lo stemma Boldù sorretto da putti, ai lati i due basilischi dello stemma cittadino, in basso a sinistra un putto sta scolpendo un'iscrizione",
+    "time_reference": "XVII secolo",
+    "cultural_site_id": "3ef59d5",
+    "cultural_site_name": "Palazzo Fulcis",
+    "istat_code": "025006",
+    "place_name": "Belluno"
+  },
+  {
+    "artwork_id": "1500190885",
+    "artwork_title": "Madonna del Carmine",
+    "artwork_description": "Dipinto",
+    "time_reference": "Metà XVII secolo",
+    "cultural_site_id": "5dfd27ce08",
+    "cultural_site_name": "Castel Capuano",
+    "istat_code": "063049",
+    "place_name": "Napoli"
+  },
+  {
+    "artwork_id": "0900593220",
+    "artwork_title": "Paesaggio scozzese",
+    "artwork_description": "Paesaggio fluviale con alberi e montagne sullo sfondo",
+    "time_reference": "Seconda metà XIX secolo",
+    "cultural_site_id": "9ed8ea96c7e",
+    "cultural_site_name": "Villa Guinigi",
+    "istat_code": "046017",
+    "place_name": "Lucca"
+  },
+  {
+    "artwork_id": "0500729081",
+    "artwork_title": "Ciociara",
+    "time_reference": "XX secolo",
+    "cultural_site_id": "26ef140d0b25c",
+    "cultural_site_name": "Palazzo della Ragione",
+    "istat_code": "023091",
+    "place_name": "Verona"
+  },
+  {
+    "artwork_id": "0100454512",
+    "artwork_title": "Adorazione dei Magi",
+    "artwork_description": "Tela dipinta",
+    "time_reference": "Metà XVII secolo",
+    "cultural_site_id": "b34403d79c17",
+    "cultural_site_name": "Casa Privata",
+    "istat_code": "103050",
+    "place_name": "Omegna"
+  },
+  {
+    "artwork_id": "0800070069",
+    "artwork_title": "Paesaggio emiliano",
+    "artwork_description": "Dipinto raffigurante paesaggio con campi e colline. Al centro è collocato un albero, mentre alla sua destra sale una stradina. Sulla sinistra si intravede un contadino su un carro trascinato da un bue. Sempre sulla sinistra, in lontananza, è collocato un piccolo paese",
+    "time_reference": "XX secolo",
+    "cultural_site_id": "1477239995289",
+    "cultural_site_name": "Istituto d'Arte - IsArt",
+    "istat_code": "037006",
+    "place_name": "Bologna"
+  },
+  {
+    "artwork_id": "1201388916",
+    "artwork_title": "Inverno in Cadore",
+    "artwork_description": "Nel dipinto è raffigurato l'interno di una dimora alpina, con al centro un grande camino col fuoco acceso e una pentola in rame fumante appesa. Ai due lati del camino due finestre da cui si vedono paesaggi innevati. In primo piano è un basso muro su due livelli sul quale sono appoggiati numerosi oggetti e alimenti. Al di qua del muro una sedia impagliata",
+    "time_reference": "XX secolo",
+    "cultural_site_id": "d2122b195",
+    "cultural_site_name": "Museo Nazionale di Arti e Tradizioni Popolari",
+    "istat_code": "058091",
+    "place_name": "Roma"
+  }
+]

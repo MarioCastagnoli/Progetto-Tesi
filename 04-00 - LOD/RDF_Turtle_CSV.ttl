@@ -1,0 +1,216 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix v: <http://rdf.data-vocabulary.org/#> .
+@prefix cult: <https://example.ontology.it/onto/cultural/> .
+@prefix cis: <http://dati.beniculturali.it/cis/> .
+@prefix tiapit: <https://w3id.org/italia/onto/TI/> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix clv: <https://w3id.org/italia/onto/CLV/> .
+@prefix data: <https://example.lod.it/data/> .
+
+<https://example.lod.it/data/ArtworkLocation/1234> rdf:type cult:ArtworkLocation ;
+	cult:artworkLocationId "1234" ;
+	cult:artworkLocationName "Palazzo della Residenza della Cassa dei Risparmi di Forlì" ;
+	cult:isLocatedIn <https://example.lod.it/data/Municipality/040012> .
+
+<https://example.lod.it/data/ArtworkLocation/1469952786491> rdf:type cult:ArtworkLocation ;
+	cult:artworkLocationId "1469952786491" ;
+	cult:artworkLocationName "Palazzo Pellegrini a S. Cecilia" ;
+	cult:isLocatedIn <https://example.lod.it/data/Municipality/023091> .
+
+<https://example.lod.it/data/ArtworkLocation/1477239995289> rdf:type cult:ArtworkLocation ;
+	cult:artworkLocationId "1477239995289" ;
+	cult:artworkLocationName "Istituto d'Arte - IsArt" ;
+	cult:isLocatedIn <https://example.lod.it/data/Municipality/037006> .
+
+<https://example.lod.it/data/ArtworkLocation/1489147295188> rdf:type cult:ArtworkLocation ;
+	cult:artworkLocationId "1489147295188" ;
+	cult:artworkLocationName "Chiesa di Santa Maria Assunta" ;
+	cult:isLocatedIn <https://example.lod.it/data/Municipality/070024> .
+
+<https://example.lod.it/data/ArtworkLocation/26ef140d0b25c> rdf:type cult:ArtworkLocation ;
+	cult:artworkLocationId "26ef140d0b25c" ;
+	cult:artworkLocationName "Palazzo della Ragione" ;
+	cult:isLocatedIn <https://example.lod.it/data/Municipality/023091> .
+
+<https://example.lod.it/data/ArtworkLocation/2c095> rdf:type cult:ArtworkLocation ;
+	cult:artworkLocationId "2c095" ;
+	cult:artworkLocationName "Villa Praitano" ;
+	cult:isLocatedIn <https://example.lod.it/data/Municipality/070006> .
+
+<https://example.lod.it/data/ArtworkLocation/3ef59d5> rdf:type cult:ArtworkLocation ;
+	cult:artworkLocationId "3ef59d5" ;
+	cult:artworkLocationName "Palazzo Fulcis" ;
+	cult:isLocatedIn <https://example.lod.it/data/Municipality/025006> .
+
+<https://example.lod.it/data/ArtworkLocation/5dfd27ce08> rdf:type cult:ArtworkLocation ;
+	cult:artworkLocationId "5dfd27ce08" ;
+	cult:artworkLocationName "Castel Capuano" ;
+	cult:isLocatedIn <https://example.lod.it/data/Municipality/063049> .
+
+<https://example.lod.it/data/ArtworkLocation/9ed8ea96c7e> rdf:type cult:ArtworkLocation ;
+	cult:artworkLocationId "9ed8ea96c7e" ;
+	cult:artworkLocationName "Villa Guinigi" ;
+	cult:isLocatedIn <https://example.lod.it/data/Municipality/046017> .
+
+<https://example.lod.it/data/ArtworkLocation/b34403d79c17> rdf:type cult:ArtworkLocation ;
+	cult:artworkLocationId "b34403d79c17" ;
+	cult:artworkLocationName "Casa Privata" ;
+	cult:isLocatedIn <https://example.lod.it/data/Municipality/103050> .
+
+<https://example.lod.it/data/ArtworkLocation/d2122b195> rdf:type cult:ArtworkLocation ;
+	cult:artworkLocationId "d2122b195" ;
+	cult:artworkLocationName "Museo Nazionale di Arti e Tradizioni Popolari" ;
+	cult:isLocatedIn <https://example.lod.it/data/Municipality/058091> .
+
+<https://example.lod.it/data/Municipality/023091> rdf:type cult:Municipality ;
+	cult:istatCode "023091" ;
+	l0:name "Verona" .
+
+<https://example.lod.it/data/Municipality/025006> rdf:type cult:Municipality ;
+	cult:istatCode "025006" ;
+	l0:name "Belluno" .
+
+<https://example.lod.it/data/Municipality/037006> rdf:type cult:Municipality ;
+	cult:istatCode "037006" ;
+	l0:name "Bologna" .
+
+<https://example.lod.it/data/Municipality/040012> rdf:type cult:Municipality ;
+	cult:istatCode "040012" ;
+	l0:name "Forlì" .
+
+<https://example.lod.it/data/Municipality/046017> rdf:type cult:Municipality ;
+	cult:istatCode "046017" ;
+	l0:name "Lucca" .
+
+<https://example.lod.it/data/Municipality/058091> rdf:type cult:Municipality ;
+	cult:istatCode "058091" ;
+	l0:name "Roma" .
+
+<https://example.lod.it/data/Municipality/063049> rdf:type cult:Municipality ;
+	cult:istatCode "063049" ;
+	l0:name "Napoli" .
+
+<https://example.lod.it/data/Municipality/070006> rdf:type cult:Municipality ;
+	cult:istatCode "070006" ;
+	l0:name "Campobasso" .
+
+<https://example.lod.it/data/Municipality/070024> rdf:type cult:Municipality ;
+	cult:istatCode "070024" ;
+	l0:name "Fossalto" .
+
+<https://example.lod.it/data/Municipality/103050> rdf:type cult:Municipality ;
+	cult:istatCode "103050" ;
+	l0:name "Omegna" .
+
+<https://example.lod.it/data/Painting/0100454512> rdf:type cult:Painting ;
+	cult:artworkId "0100454512" ;
+	cult:description "Tela dipinta" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/b34403d79c17> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/Met%C3%A0%20XVII%20secolo> ;
+	cult:title "Adorazione dei Magi" .
+
+<https://example.lod.it/data/Painting/0500638012> rdf:type cult:Painting ;
+	cult:artworkId "0500638012" ;
+	cult:description "Tela di formato verticale, rappresenta una fanciulla con pizzo e nastro rosso al collo" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/1469952786491> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/1756-1762> ;
+	cult:title "Giovane donna in abito bruno, con collarino di pizzo bianco e nastro rosso" .
+
+<https://example.lod.it/data/Painting/0500717049> rdf:type cult:Painting ;
+	cult:artworkId "0500717049" ;
+	cult:description "Tela di piccole dimensioni, rappresenta il ritratto di una figura maschile, a mezzo busto, posto di tre quarti" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/1469952786491> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/XVII%20secolo> ;
+	cult:title "Ritratto di gentiluomo" .
+
+<https://example.lod.it/data/Painting/0500717074> rdf:type cult:Painting ;
+	cult:artworkId "0500717074" ;
+	cult:description "Tela di formato orizzontale, rappresenta una vista a volo d'uccello della città di Belluno, in alto al centro lo stemma Boldù sorretto da putti, ai lati i due basilischi dello stemma cittadino, in basso a sinistra un putto sta scolpendo un'iscrizione" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/3ef59d5> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/XVII%20secolo> ;
+	cult:title "Pianta prospettica della città di Belluno" .
+
+<https://example.lod.it/data/Painting/0500717120> rdf:type cult:Painting ;
+	cult:artworkId "0500717120" ;
+	cult:description "Tavola di formato verticale, rappresenta il ritratto di una giovane donna" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/1469952786491> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/XX%20secolo> ;
+	cult:title "Ritratto di Gianna" .
+
+<https://example.lod.it/data/Painting/0500729081> rdf:type cult:Painting ;
+	cult:artworkId "0500729081" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/26ef140d0b25c> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/XX%20secolo> ;
+	cult:title "Ciociara" .
+
+<https://example.lod.it/data/Painting/0800070069> rdf:type cult:Painting ;
+	cult:artworkId "0800070069" ;
+	cult:description "Dipinto raffigurante paesaggio con campi e colline. Al centro è collocato un albero, mentre alla sua destra sale una stradina. Sulla sinistra si intravede un contadino su un carro trascinato da un bue. Sempre sulla sinistra, in lontananza, è collocato un piccolo paese" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/1477239995289> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/XX%20secolo> ;
+	cult:title "Paesaggio emiliano" .
+
+<https://example.lod.it/data/Painting/0800686820> rdf:type cult:Painting ;
+	cult:artworkId "0800686820" ;
+	cult:description "Dipinto su tela tensionata ad un telaio con biette di espansione agli angolari, il telaio è posto all'interno di una cornice doppia con passepartout interno rivestito di tela bianca e vetro di protezione frontale ed un profilo esterno modanato e argentato. La scena mostra un consesso di persone in abiti civili che tengono dietro in corteo funebre ad un carretto trainato da una coppia di giovenche bianche nella stradina che si inerpica a raggiungere un borgo in cima ad una collina" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/1234> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/1986-12-31> ;
+	cult:title "I fer dl'amstir" .
+
+<https://example.lod.it/data/Painting/0900593220> rdf:type cult:Painting ;
+	cult:artworkId "0900593220" ;
+	cult:description "Paesaggio fluviale con alberi e montagne sullo sfondo" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/9ed8ea96c7e> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/Seconda%20met%C3%A0%20XIX%20secolo> ;
+	cult:title "Paesaggio scozzese" .
+
+<https://example.lod.it/data/Painting/1201388916> rdf:type cult:Painting ;
+	cult:artworkId "1201388916" ;
+	cult:description "Nel dipinto è raffigurato l'interno di una dimora alpina, con al centro un grande camino col fuoco acceso e una pentola in rame fumante appesa. Ai due lati del camino due finestre da cui si vedono paesaggi innevati. In primo piano è un basso muro su due livelli sul quale sono appoggiati numerosi oggetti e alimenti. Al di qua del muro una sedia impagliata" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/d2122b195> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/XX%20secolo> ;
+	cult:title "Inverno in Cadore" .
+
+<https://example.lod.it/data/Painting/1400001122-11> rdf:type cult:Painting ;
+	cult:artworkId "1400001122-11" ;
+	cult:description "Dipinto" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/1489147295188> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/XVII%20secolo> ;
+	cult:title "Resurrezione di Cristo" .
+
+<https://example.lod.it/data/Painting/1400079575> rdf:type cult:Painting ;
+	cult:artworkId "1400079575" ;
+	cult:description "Dipinto a olio su cartoncino raffigurante una veduta della campagna romana, colta nella quiete dopo un temporale, nel cielo, infatti, si affrontano nubi maestose e squarci di sereno, sullo sfondo si riconosce la sagoma del Mausoleo di Cecilia Metella sulla via Appia" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/2c095> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/Fine%20XIX%20secolo> ;
+	cult:title "All'acqua Santa, dopo il temporale" .
+
+<https://example.lod.it/data/Painting/1500190885> rdf:type cult:Painting ;
+	cult:artworkId "1500190885" ;
+	cult:description "Dipinto" ;
+	cult:hasArtworkLocation <https://example.lod.it/data/ArtworkLocation/5dfd27ce08> ;
+	cult:hasTimeReference <https://example.lod.it/data/TimeReference/Met%C3%A0%20XVII%20secolo> ;
+	cult:title "Madonna del Carmine" .
+
+<https://example.lod.it/data/TimeReference/1756-1762> rdf:type cult:TimeReference ;
+	l0:name "1756-1762" .
+
+<https://example.lod.it/data/TimeReference/1986-12-31> rdf:type cult:TimeReference ;
+	l0:name "1986-12-31" .
+
+<https://example.lod.it/data/TimeReference/Fine%20XIX%20secolo> rdf:type cult:TimeReference ;
+	l0:name "Fine XIX secolo" .
+
+<https://example.lod.it/data/TimeReference/Met%C3%A0%20XVII%20secolo> rdf:type cult:TimeReference ;
+	l0:name "Metà XVII secolo" .
+
+<https://example.lod.it/data/TimeReference/Seconda%20met%C3%A0%20XIX%20secolo> rdf:type cult:TimeReference ;
+	l0:name "Seconda metà XIX secolo" .
+
+<https://example.lod.it/data/TimeReference/XVII%20secolo> rdf:type cult:TimeReference ;
+	l0:name "XVII secolo" .
+
+<https://example.lod.it/data/TimeReference/XX%20secolo> rdf:type cult:TimeReference ;
+	l0:name "XX secolo" .
